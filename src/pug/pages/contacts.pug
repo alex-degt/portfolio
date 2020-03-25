@@ -1,0 +1,13 @@
+extends ./../layouts/main.pug
+
+block variables
+	- const title = "Контакты | Алексей Дегтярев";
+
+block content
+	.background#background
+	+mobile-nav()
+	.page-contacts
+		+header-nav('header-nav-wrap--contacts','header-nav header-nav-inner')
+		include ../sections/_contacts.pug
+		include ../sections/_footer.pug
+

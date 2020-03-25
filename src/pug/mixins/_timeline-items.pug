@@ -1,0 +1,10 @@
+mixin timeline-item(dataAos, icon, title, desc, time)
+	<!-- timeline-item -->
+	.timeline-item(data-aos="fade-" + dataAos)
+		.timeline-item__icon
+			img(src="img/icons/" + icon, alt= title )
+		.timeline-item__content
+			h4.timeline-title #{title}
+			.timeline-desc
+				p #{desc}
+			.timeline-time #{time}

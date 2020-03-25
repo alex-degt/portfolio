@@ -1,0 +1,13 @@
+extends ./../layouts/main.pug
+
+block variables
+	- const title = "Главная | Алексей Дегтярев";
+
+block content
+	.background#background
+	+mobile-nav()
+	include ../sections/_header.pug
+	include ../sections/_portfolio-main-page.pug
+	include ../sections/_how-we-work.pug
+	include ../sections/_contacts.pug
+	include ../sections/_footer.pug

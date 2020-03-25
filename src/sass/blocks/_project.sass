@@ -1,0 +1,331 @@
+.header-nav-wrap--project
+	padding-top: 32px
+	padding-bottom: 32px
+	@media (min-width: 1200px)
+		padding-top: 70px
+		padding-bottom: 96px
+
+.section-project
+	margin-top: 24px
+	margin-right: auto
+	margin-left: auto
+	max-width: 520px
+	@media (min-width: 768px)
+		margin-top: 30px
+		margin-right: 0
+		margin-bottom: 28px
+		margin-left: 0
+		max-width: 100%
+	@media (min-width: 1200px)
+		margin-top: 0
+
+.project-title
+	margin-bottom: 35px
+	text-align: center
+	color: #000
+	font-size: 30px
+	font-weight: 800
+	line-height: 1.2
+	@media (min-width: 768px)
+		margin-bottom: 48px
+		font-size: 42px
+	@media (min-width: 1200px)
+		font-size: 48px
+
+.line-bottom--medium
+	position: relative
+	z-index: 2
+	color: #000
+	&:after
+		height: 12px
+		position: absolute
+		z-index: -1
+		right: -5px
+		bottom: 5px
+		left: -5px
+		content: ""
+		background-color: $yellow
+	@media (min-width: 768px)
+		&:after
+			bottom: 9px
+
+.project-labels
+	margin-bottom: 51px
+	display: flex
+	align-items: center
+	flex-wrap: wrap
+	justify-content: center
+	@media (min-width: 768px)
+		margin-bottom: 40px
+	@media (min-width: 1200px)
+		margin-bottom: 87px
+		justify-content: center
+
+.label__html,
+.label__css,
+.label__boot,
+.label__js,
+.label__jQuery,
+.label__PHP
+	margin-right: 10px
+	margin-bottom: 10px
+	padding: 6px 11px
+	display: inline-block
+	color: #fff
+	font-family: Roboto, sans-serif
+	font-size: 14px
+	font-weight: 700
+	&:last-child
+		margin-right: 0
+	@media (min-width: 1200px)
+		margin-bottom: 0
+
+.label__html
+	background-color: #ff861a
+	
+.label__css
+	background-color: #039be5
+
+.label__boot
+	background-color: #a062c7
+
+.label__js
+	background-color: #ffd200
+
+.label__jQuery
+	background-color: #044d85
+
+.label__PHP
+	background-color: #777bb4
+
+.project-card-wrap
+	display: flex
+	flex-direction: column-reverse
+	@media (min-width: 1200px)
+		margin-bottom: 96px
+		display: flex
+		flex-direction: row
+		justify-content: space-between
+
+.project-card-content
+	@media (min-width: 768px)
+		margin-bottom: 29px
+		display: flex
+		flex-direction: row
+		justify-content: space-between
+	@media (min-width: 1200px)
+		margin-top: 8px
+		margin-bottom: 0
+		width: 42%
+		max-width: 458px
+		height: 100%
+		flex-direction: column
+
+.project-card__inner-wrap
+	@media (min-width: 768px)
+		width: 50%
+		max-width: 338px
+	@media (min-width: 1200px)
+		width: 100%
+		max-width: 100%
+
+.project-card-img
+	margin-bottom: 75px
+	width: 100%
+	position: relative
+	z-index: -1
+	transform: scale(1.1)
+	@media (min-width: 768px)
+		margin-bottom: 58px
+		max-width: 652px
+		align-self: center
+		transform: none
+		box-shadow: 20px 20px 100px #c4dbe9
+	@media (min-width: 1200px)
+		margin: 0
+		width: 58%
+		max-width: 652px
+		min-height: 576px
+		img
+			width: 100%
+			height: 100%
+			position: absolute
+
+			object-fit: cover
+			object-position: top
+
+.project-card-references
+	margin-bottom: 52px
+	@media (min-width: 768px)
+		margin-bottom: 60px
+	@media (min-width: 1200px)
+		margin-bottom: 56px
+
+.references__title
+	margin-bottom: 29px
+
+.references__links
+	margin-left: 43px
+	display: flex
+	flex-direction: column
+
+.references__link-window,
+.references__link-github
+	margin-right: auto
+	margin-bottom: 25px
+	position: relative
+	transition: .5s
+	color: #2a87b4
+	border-bottom: 1px solid #2a87b4
+	font-size: 18px
+	font-weight: 400
+	&:before
+		position: absolute
+		content: ""
+	&:last-child
+		margin-bottom: 0
+	&:hover, 
+	&:active
+		color: #ed574f
+		border-bottom: 1px solid #ed574f
+
+.references__link-window
+	&:before
+		width: 26px
+		height: 26px
+		top: -3px
+		left: -38px
+		background-image: url("../img/icons/window.png")
+	
+.references__link-github
+	&:before
+		width: 30px
+		height: 28px
+		top: -5px
+		left: -40px
+		background-image: url("../img/icons/github.png")
+
+.project-card-about
+	margin-bottom: 42px
+	@media (min-width: 1200px)
+		margin-bottom: 59px
+
+.about__title
+	margin-bottom: 16px
+
+.about__desc
+	max-width: 550px
+	letter-spacing: 0.19px
+	color: #161616
+	font-size: 16px
+	font-weight: 400
+	line-height: 24px
+	@media (min-width: 1200px)
+		max-width: 440px
+
+.project-card-details
+	margin-bottom: 43px
+	@media (min-width: 768px)
+		margin-bottom: 19px
+		width: 50%
+		max-width: 338px
+	@media (min-width: 1200px)
+		margin-bottom: 0
+		width: 100%
+		max-width: 100%
+
+.details__title
+	margin-bottom: 25px
+
+.details-desc
+	margin-bottom: 9px
+	display: flex
+	flex-direction: column
+	&:last-child
+		margin-top: 22px
+		margin-bottom: 0
+	@media (min-width: 1200px)
+		margin-bottom: 26px
+		display: flex
+		flex-direction: row
+		justify-content: space-between
+		&:last-child
+			margin-top: 0
+
+.details-desc__name
+	letter-spacing: 0.19px
+	color: #161616
+	font-size: 16px
+	font-weight: 800
+	line-height: 24px
+
+.details-desc__text
+	width: 100%
+	max-width: 550px
+	letter-spacing: 0.19px
+	color: #161616
+	font-size: 16px
+	font-weight: 400
+	line-height: 24px
+	@media (min-width: 1200px)
+		max-width: 293px
+
+.details-desc__link
+	transition: .5s
+	text-decoration: underline
+	letter-spacing: 0.19px
+	color: #039be5
+	font-size: 16px
+	font-weight: 400
+	line-height: 24px
+	&:hover, 
+	&:active
+		text-decoration: underline
+		color: #ed574f
+
+.project-card-buttons
+	display: flex
+	flex-wrap: wrap
+	@media (min-width: 768px)
+		justify-content: space-between
+	@media (min-width: 1200px)
+		margin-bottom: 106px
+		flex-wrap: no-wrap
+		justify-content: space-between
+
+.button-prev,
+.button-next
+	width: 100%
+	max-width: 320px
+	height: 60px
+	display: flex
+	align-items: center
+	justify-content: center
+	transition: .5s
+	letter-spacing: 0.26px
+	color: #feffff
+	background-color: #333333
+	font-family: Roboto, sans-serif
+	font-size: 22px
+	font-weight: 300
+	&:hover
+		background-color: #656565
+	&:active
+		background-color: #141414
+	@media (min-width: 768px)
+		max-width: 338px
+	@media (min-width: 1200px)
+		max-width: 48%
+		height: 80px
+		flex-wrap: no-wrap
+
+.button-prev
+	display: none
+	@media (min-width: 768px)
+		display: flex
+
+.project-page
+	.footer-inner
+		@media (min-width: 1200px)
+			background-color: #fff
+

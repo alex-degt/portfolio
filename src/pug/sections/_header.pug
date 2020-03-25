@@ -1,0 +1,32 @@
+ul#page-nav
+	li.active
+		a(href="#header")
+	li
+		a(href="#portfolio")
+	li
+		a(href="#section-about")
+	li
+		a(href="#contacts")
+
+header.header#header
+	+header-nav('header-nav-wrap-main', 'header-nav')
+	.container
+		.header-content-wrap
+			.photo
+				img(src="img/photo.jpg" alt="photo").photo__img
+			.header-content
+				h1.header__title 
+					span.line-bottom--large Алексей
+					|
+					br
+					|
+					span.line-bottom--large Дегтярев
+				.header__desc
+					p Верстальщик сайтов, веб-разработчик. Оперативная верстка. Работаю с соблюдением сроков и выполнением ТЗ. 
+				a(href="#skills").button Познакомиться
+				a(href="#contacts").button-border Контакты
+	
+	.header-background
+		img(src="img/backgrounds/bg-header.png" alt="background").header-background__img
+
+	include ./../sections/_header-skills.pug

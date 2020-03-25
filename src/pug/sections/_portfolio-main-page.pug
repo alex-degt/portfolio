@@ -1,0 +1,9 @@
+section.section-portfolio#portfolio
+	.container
+		.portfolio-content-wrap
+			.portfolio-title
+				h3.title Портфолио
+			+cardBlock([
+				{addClass: 'portfolio-card', cardClass: 'card__img', img: 'unit', link: 'project-unit.html', titleClass: 'card__title', title: 'ЮНИТ', textClass: 'card__text', text: 'Верстка одностраничного сайта.'},
+				{addClass: 'portfolio-card', cardClass: 'card__img', img: 'lambda', link: 'project-lambda.html', titleClass: 'card__title', title: 'Lambda', textClass: 'card__text', text: 'Ресторан греческой кухни.'}
+				])

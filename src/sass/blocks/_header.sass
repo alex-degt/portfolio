@@ -1,0 +1,303 @@
+.header
+	margin: 0 auto
+	position: relative
+	overflow: hidden
+	@media (min-width: 768px)
+		padding-bottom: 40px
+	@media (min-width: 1200px)
+		padding-top: 70px
+		padding-bottom: 239px
+		max-width: 1600px
+		background-image: url("../img/backgrounds/bg-header-lines-5.jpg")
+		background-repeat: repeat
+		background-position: center
+		background-size: auto
+
+.header-nav-wrap-main
+	margin-top: 32px
+	margin-bottom: 32px
+	@media (min-width: 768px)
+		margin-bottom: 72px
+	@media (min-width: 1200px)
+		margin-top: 0
+		margin-bottom: 175px
+
+.header-nav
+	padding: 0 20px
+	position: relative
+	display: flex
+	align-items: center
+	justify-content: space-between
+	color: #000
+	@media (min-width: 768px)
+		padding: 0 30px
+	@media (min-width: 1200px)
+		margin: 0 auto
+		padding: 0 30px
+		max-width: 1400px
+
+.header-fixed
+	padding-top: 10px
+	padding-bottom: 10px
+	max-width: 100%
+	position: fixed
+	z-index: 9
+	top: 0
+	right: 0
+	left: 0
+	transition: .5s
+	background-color: rgba(255, 255, 255, 0.9)
+
+
+.logo
+	position: relative
+	z-index: 2
+	display: inline-block
+	color: #000
+	font-size: 42px
+	font-weight: 900
+	&:after
+		height: 10px
+		position: absolute
+		z-index: -1
+		right: -5px
+		bottom: 2px
+		left: -5px
+		content: ""
+		background-color: $yellow
+	&:visited
+		color: #000
+	&:focus
+		outline: 3px dotted $dots-active
+	&:hover
+		transition: 1s
+		transform: rotate(360deg)
+
+.logo-menu
+	position: relative
+	z-index: 2
+	display: inline-block
+	color: #000
+	font-size: 42px
+	font-weight: 900
+	&:after
+		height: 10px
+		position: absolute
+		z-index: -1
+		right: -5px
+		bottom: 2px
+		left: -5px
+		content: ""
+		background-color: $yellow
+	&:visited
+		color: #000
+	&:focus
+		outline: 3px dotted $dots-active
+	&:hover
+		transition: 1s
+		transform: rotate(360deg)
+
+.nav
+	display: none
+	@media (min-width: 768px)
+		display: block
+
+.nav__link
+	margin-right: 30px
+	position: relative
+	z-index: 2
+	display: inline-block
+	color: #000000
+	font-size: 20px
+	font-weight: 700
+	&:last-child
+		margin-right: 0
+	&:after
+		width: 0
+		height: 6px
+		position: absolute
+		z-index: -1
+		bottom: 0px
+		left: -5px
+		content: ""
+		transition: 0.5s
+		background-color: $yellow
+	&:hover:after
+		padding-right: 10px
+		width: 100%
+	&:visited
+		color: #000
+	&:focus
+		outline: 3px dotted $dots-active
+	@media (min-width: 962px)
+		margin-right: 73px
+
+.header-soc
+	display: none
+	@media (min-width: 768px)
+		display: block
+
+
+.header-soc__link
+	margin-right: 20px
+	position: relative
+	z-index: 1
+	display: inline-block
+	transition: .2s
+	color: #000
+	font-size: 32px
+	font-weight: 700
+	&:last-child
+		margin-right: 0
+	&:after
+		width: 0
+		height: 0
+		position: absolute
+		z-index: -1
+		top: 50%
+		left: 50%
+		content: ""
+		transition: .4s
+		transform: translate(-50%, -50%)
+		border-radius: 50%
+		background-color: #ebe8e8
+	&:hover
+		&:after
+			width: 50px
+			height: 50px
+
+.header-soc__link--td
+	&:active
+		&:after
+			background-color: #039be5
+	&:hover
+		color: #039be5
+	&:active
+		color: #fff
+
+.header-soc__link--gh
+	&:active
+		&:after
+			background-color: #6cc644
+	&:hover
+		color: #6cc644
+	&:active
+		color: #fff
+
+.header-soc__link--vk
+	&:active
+		&:after
+			background-color: #45668e
+	&:hover
+		color: #45668e
+	&:active
+		color: #fff
+
+
+.header-content-wrap
+	display: flex
+	flex-direction: column
+	@media (min-width: 768px)
+		flex-direction: row-reverse
+		justify-content: space-between
+
+.photo
+	margin-bottom: 52px
+	position: relative
+	z-index: 2
+	display: flex
+	justify-content: center
+	&:after
+		display: none
+	@media (min-width: 768px)
+		margin-bottom: 0
+		width: 50%
+		&:after
+			width: 290px
+			height: 290px
+			position: absolute
+			z-index: -1
+			right: -114px
+			bottom: -36px
+			display: block
+			content: ""
+			opacity: 0.5
+			background-image: linear-gradient(to top, #f4f8f9 0%, rgba(244, 248, 249, 0) 100%)
+	@media (min-width: 1200px)
+		align-items: center
+		justify-content: flex-end
+		&:after
+			width: 457px
+			height: 410px
+			right: -124px
+			bottom: -118px
+
+.photo__img
+	width: 100%
+	max-width: 500px
+	height: 100%
+
+	object-fit: cover
+	@media (min-width: 1200px)
+		width: 457px
+		height: 410px
+
+.header-content
+	margin-right: auto
+	margin-left: auto
+	max-width: 520px
+	z-index: 1
+	.button, .button-border
+		display: none
+	@media (min-width: 768px)
+		margin: 0
+		width: 50%
+		max-width: 338px
+	@media (min-width: 1200px)
+		max-width: 100%
+		.button, .button-border
+			display: inline-block
+
+.header__title
+	margin-bottom: 24px
+	color: $text-color
+	font-size: 42px
+	font-weight: 800
+	line-height: 1.2
+	@media (min-width: 768px)
+		margin-top: 10px
+		margin-bottom: 17px
+		font-size: 52px
+	@media (min-width: 1200px)
+		margin-top: 0
+		margin-bottom: 14px
+		font-size: 90px
+		line-height: 1.1
+
+.header__desc
+	margin-bottom: 33px
+	color: $header-desc
+	text-shadow: 0 3px 42px #ffffff
+	font-size: 18px
+	font-weight: 500
+	line-height: 30px
+	@media (min-width: 1200px)
+		margin-bottom: 33px
+		font-size: 24px
+		line-height: 36px
+
+.header-content .button
+	margin-right: 21px
+
+.header-background
+	max-width: 570px
+	z-index: -1
+	transform: scale(1.8)
+	@media (min-width: 768px)
+		margin-top: -62px
+		max-width: 1600px
+		transform: none
+	@media (min-width: 1200px)
+		margin-top: -128px
+		z-index: -1
+

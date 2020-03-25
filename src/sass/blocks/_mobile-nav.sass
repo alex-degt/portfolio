@@ -1,0 +1,139 @@
+.nav-toggle-wrap
+	width: 45px
+	height: 45px
+	// z-index: 10
+	display: flex
+	align-items: center
+	justify-content: center
+	cursor: pointer
+	@media (min-width: 768px)
+		display: none
+
+.nav-toggle
+	width: 40px
+	height: 5px
+	position: relative
+	z-index: 15
+	background-color: #000
+	display: block
+	&:before
+		top: -10px
+	&:after
+		bottom: -10px
+	&:before, &:after
+		width: 100%
+		height: 5px
+		position: absolute
+		left: 0
+		display: block
+		content: ""
+		transition: transform 0.2s ease-in, top 0.2s linear 0.2s
+		background-color: #000
+	@media (min-width: 768px)
+		display: none
+
+.nav-toggle.nav-toggle--active
+	background-color: transparent
+	&:before
+		top: 0
+		transition: top 0.2s linear, transform 0.2s ease-in .2s
+		transform: rotate(-45deg)
+	&:after
+		top: 0
+		transition: top 0.2s linear, transform 0.2s ease-in .2s
+		transform: rotate(45deg)
+
+.mobile-nav
+	padding: 28px 30px
+	width: 320px
+	height: 100vh
+	position: fixed
+	z-index: 10
+	top: 0
+	right: 0
+	transform: translateX(100%)
+	bottom: 0
+	display: block
+	transition: transform 0.5s ease-in
+	background-color: #fff
+	.soc-block
+		margin-bottom: 41px
+		.soc-item
+			margin-right: 21px
+			&:last-child
+				margin-right: 0
+	.skills-mail
+		color: #039be5
+		border-bottom: 1px solid #039be5
+
+.mobile-nav--visible
+	transform: translateX(0)
+
+.main-nav--mobile
+	margin-bottom: 45px
+	display: flex
+	flex-direction: column
+
+.logo__mobile
+	margin-bottom: 45px
+	position: relative
+	display: inline-block
+	color: #000
+	font-size: 42px
+	font-weight: 900
+	&:after
+		height: 10px
+		position: absolute
+		z-index: -1
+		right: -5px
+		bottom: 2px
+		left: -5px
+		content: ""
+		background-color: $yellow
+	&:visited
+		color: #000
+	&:focus
+		outline: 3px dotted $dots-active
+	&:hover
+		transition: 1s
+		transform: rotate(360deg)
+
+.nav__link--mobile
+	margin-bottom: 31px
+	display: block
+	transition: .5s
+	text-decoration: underline
+	color: #000
+	font-size: 20px
+	font-weight: 700
+	line-height: 25px
+	&:last-child
+		margin-bottom: 0
+	&:hover
+		text-decoration: underline
+		color: #039be5
+	&:active
+		color: darken(#039be5, 10%)
+
+
+.background
+	width: 100%
+	height: 100%
+	position: absolute
+	z-index: 4
+	top: 0
+	left: 0
+	display: none
+	transition: 0.5s
+	background-color: rgba(44, 52, 73, 0.75)
+
+.background--active
+	position: fixed
+	display: block
+	transition: .5s
+	animation-name: slowShow
+	animation-duration: .3s
+	animation-fill-mode: forwards
+
+.fixed
+	position: fixed

@@ -1,0 +1,236 @@
+.section-about
+	padding-top: 58px
+	padding-bottom: 66px
+	z-index: 1
+	overflow: hidden
+	@media (min-width: 768px)
+		padding-top: 85px
+		padding-bottom: 90px
+	@media (min-width: 1200px)
+		padding-top: 143px
+		padding-bottom: 150px
+		background-image: url("../img/backgrounds/bg-work-lines-4.jpg")
+		background-repeat: repeat
+		background-position: center
+		background-size: auto
+
+.section-about-wrap
+	margin: 0 auto
+	max-width: 520px
+	@media (min-width: 768px)
+		max-width: 1005px
+
+.section-about__title
+	margin-bottom: 52px
+	text-align: center
+	.title
+		font-size: 38px
+	@media (min-width: 768px)
+		margin-bottom: 162px
+		.title
+			font-size: 52px
+	@media (min-width: 1200px)
+		margin-bottom: 161px
+		.title
+			font-size: 64px
+
+.about-wrap
+	display: flex
+	flex-direction: column
+
+.timeline-item
+	padding-bottom: 70px
+	min-height: 120px
+	display: flex
+	&:last-child
+		padding-bottom: 0
+	&:nth-child(even)
+		align-self: flex-start
+	&:nth-child(odd)
+		flex-direction: row
+	@media (min-width: 768px)
+		&:nth-child(even)
+			align-self: flex-end
+		&:nth-child(odd)
+			align-self: flex-start
+			flex-direction: row-reverse
+			text-align: right
+			p
+				text-align: right
+	@media (min-width: 1200px)
+		padding-bottom: 89px
+		min-height: 150px
+		position: relative
+		&:last-child
+			padding-bottom: 0
+
+.timeline-item
+	&:nth-child(odd)
+		.timeline-item__content
+			position: relative
+			&:after
+				width: 4px
+				position: absolute
+				top: 94px
+				bottom: -50px
+				left: -66px
+				display: block
+				content: ""
+				background-color: #e1eef4
+	&:nth-last-child(1)
+		.timeline-item__content
+			&:after
+				display: none
+	@media (min-width: 768px)
+		&:nth-child(odd)
+			.timeline-item__content
+				position: relative
+				&:after
+					top: 68px
+					right: -75px
+					bottom: -49px
+					left: auto
+		&:last-child
+			.timeline-item__content
+				&:after
+					display: none
+	@media (min-width: 1200px)
+		&:nth-child(odd)
+			.timeline-item__content
+				position: relative
+				&:after
+					top: 94px
+					right: -81px
+					bottom: -68px
+					left: auto
+
+.timeline-item
+	&:nth-child(even)
+		.timeline-item__content
+			position: relative
+			&:after
+				width: 4px
+				position: absolute
+				top: 95px
+				bottom: -50px
+				left: -66px
+				display: block
+				content: ""
+				background-color: #e1eef4
+	@media (min-width: 768px)
+		&:nth-child(even)
+			.timeline-item__content
+				position: relative
+				&:after
+					top: 75px
+					bottom: -50px
+					left: -77px
+		&:first-child
+			.timeline-item__content
+				&:before
+					width: 4px
+					position: absolute
+					top: -104px
+					right: -75px
+					bottom: 173px
+					display: block
+					content: ""
+					background-color: #e1eef4
+	@media (min-width: 1200px)
+		&:nth-child(even)
+			.timeline-item__content
+				position: relative
+				&:after
+					top: 105px
+					bottom: -72px
+					left: -80px
+		&:first-child
+			.timeline-item__content
+				&:before
+					top: -77px
+					right: -81px
+					bottom: 155px
+
+.timeline-item__content
+	margin-top: 4px
+	min-width: 181px
+	&:hover
+		.timeline-title
+			&:after
+				transition: .5s
+				background-color: #ea736d
+	@media (min-width: 768px)
+		margin-top: 27px
+		max-width: 280px
+	@media (min-width: 1200px)
+		margin-top: 0
+		width: 424px
+		max-width: 100%
+
+.timeline-title
+	margin-bottom: 12px
+	position: relative
+	z-index: 5
+	display: inline-block
+	color: #000000
+	font-size: 20px
+	font-weight: 800
+	@media (min-width: 768px)
+		margin-bottom: 8px
+		font-size: 24px
+	@media (min-width: 1200px)
+		margin-top: 23px
+		margin-bottom: 15px
+		font-size: 26px
+		&:after
+			height: 7px
+			position: absolute
+			z-index: -1
+			right: 0
+			bottom: 0
+			left: 0
+			content: ""
+			background-color: #fbdc4d
+
+.timeline-desc
+	margin-bottom: 11px
+	max-width: 600px
+	text-align: left
+	font-weight: 500
+	p
+		font-size: 14px
+		line-height: 1.4
+	@media (min-width: 768px)
+		max-width: auto
+		p
+			font-size: 16px
+	@media (min-width: 1200px)
+		p
+			font-size: 18px
+			line-height: 1.2
+
+.timeline-time
+	color: #000000
+	font-size: 14px
+	font-weight: 700
+	@media (min-width: 768px)
+		font-size: 18px
+	@media (min-width: 1200px)
+		font-size: 18px
+
+.timeline-item__icon
+	margin-right: 25px
+	min-width: 74px
+	height: 74px
+	display: flex
+	align-items: center
+	justify-content: center
+	border-radius: 28px
+	background-color: #fff
+	box-shadow: 2px 3px 35px rgba(0, 112, 187, 0.35)
+	@media (min-width: 768px)
+		margin-right: 36px
+		margin-left: 38px
+	@media (min-width: 1200px)
+		margin-right: 39px
+		margin-left: 44px

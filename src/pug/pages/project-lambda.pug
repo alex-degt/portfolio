@@ -1,0 +1,25 @@
+extends ./../layouts/main.pug
+
+block variables
+	- const title = "Lambda | Алексей Дегтярев";
+
+block content
+	.background#background
+	+mobile-nav()
+	.project-page
+		+header-nav('header-nav-wrap--project','header-nav header-nav-inner')
+		section.section-project
+			.container
+				+project-card([
+					{title: 'Проект "Lambda"',
+					linkDemo: 'https://alex-degt.github.io/Lambda/',
+					linkGit: 'https://github.com/alex-degt/Lambda/',
+					projectDesc: 'Страница сайта для ресторана греческой кухни. Содержит в себе все основные информационные блоки для сайта ресторана. Совместим с современными браузерами, страница полностью адаптивна.',
+					workDetails: 'Адаптивная верстка, HTML5, CSS3, JavaScript, jQuery.',
+					projectFeatures: 'Анимация AOS, карусель OwlCarousel, Mobile First.',
+					img: 'lambda',
+					buttonPrev: 'project-unit.html',
+					buttonNext: 'project-unit.html'}
+					])
+
+		include ../sections/_footer-inner.pug

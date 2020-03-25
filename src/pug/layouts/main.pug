@@ -1,0 +1,33 @@
+include ./../mixins/_header-nav.pug
+include ./../mixins/_social-icons.pug
+include ./../mixins/_portfolio-cards.pug
+include ./../mixins/_timeline-items.pug
+include ./../mixins/_project-card.pug
+include ./../mixins/_mobile-nav.pug
+
+block variables
+
+<!DOCTYPE html>
+html(lang="ru")
+	head
+		meta(charset="UTF-8")
+		meta(name="viewport" content="width=device-width, initial-scale=1.0")
+		meta(http-equiv="X-UA-Compatible" content="ie=edge")
+		link(rel='icon' href='img/favicon.ico')
+		link(rel='icon' sizes='128x128' href='img/favicon.ico')
+		link(href='https://fonts.googleapis.com/css?family=Roboto:100,400,700&display=swap&subset=cyrillic-ext' rel='stylesheet')
+		link(rel="stylesheet" href="libs/fonts/mplus1p/mplus1p.css")
+		link(rel="stylesheet" href="libs/aos/aos.css")
+		link(rel="stylesheet" href="libs/fonts/font-awesome/css/all.min.css")
+		link(rel="stylesheet" href="css/main.css")
+		title #{title}
+	body
+
+		block content
+
+
+		script(src="libs/jquery/jquery.min.js")
+		script(src="libs/nav/nav.js")
+		script(src="libs/aos/aos.js")
+		script(src="libs/validate/validate.js")
+		script(src="js/main.js")
