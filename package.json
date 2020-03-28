@@ -12,6 +12,8 @@
     "browser-sync": "^2.26.7",
     "core-js": "^3.6.4",
     "del": "^5.1.0",
+    "fast-glob": "^3.2.2",
+    "glob": "^7.1.6",
     "gulp": "^4.0.2",
     "gulp-autoprefixer": "^7.0.1",
     "gulp-notify": "^3.2.0",
@@ -20,5 +22,8 @@
     "gulp-sass": "^4.0.2",
     "gulp-sourcemaps": "^2.6.5",
     "gulp-watch": "^5.0.1"
+  },
+  "devDependencies": {
+    "gulp-sass-glob": "^1.1.0"
   }
 }

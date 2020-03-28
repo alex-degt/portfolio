@@ -7,8 +7,8 @@ $c = true;
 
 // Save Basic Form parametrs
 $project_name = trim($_POST["project_name"]);
-$admin_email  = trim($_POST["admin_email"]);
-$email_from  = trim($_POST["email_from"]);
+$admin_email = trim($_POST["admin_email"]);
+$email_from = trim($_POST["email_from"]);
 // $form_subject = trim($_POST["form_subject"]);
 
 // Serialize form fields - that filled-in by User
