@@ -97,14 +97,14 @@ $(document).ready(function() {
 
 	// AJAX
 	function ajaxFormSubmit() {
-		let string = $(".contacts-form").serialize();
+		let string = $("#contacts-form").serialize();
 
 		$.ajax({
 			type: "POST",
 			url: "php/mail.php",
 			data: string,
 			success: function(html) {
-				$(".contacts-form").slideUp(800);
+				$("#contacts-form label").slideUp(800);
 				$("#answer").html(html);
 			}
 		});

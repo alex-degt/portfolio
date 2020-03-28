@@ -51,7 +51,7 @@ $headers = "MIME-Version: 1.0" . PHP_EOL .
 'Reply-To: '.$admin_email.'' . PHP_EOL;
 
 // Sending email to admin
-mail($admin_email, $form_subject, $message, $headers );
+mail($admin_email, $form_subject, $message, $headers);
 
 // Saving user data in file
 send_user_data_in_txt_file ($message);
@@ -59,11 +59,11 @@ send_user_data_in_txt_file ($message);
 // header('location: ../thankyou.php');
 
 echo "<div class='contact-form__success'>
-		<h2 class="success-title">Отлично!</h2>
-		<div class="success-text">
+		<h2 class='success-title'>Отлично!</h2>
+		<div class='success-text'>
 			<p>Я свяжусь с Вами в ближайшее время!</p>
 		</div>
-	</div> ";
+	</div>";
 
 ?>
 
