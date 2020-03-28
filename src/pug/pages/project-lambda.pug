@@ -4,8 +4,6 @@ block variables
 	- const title = "Lambda | Алексей Дегтярев";
 
 block content
-	.background#background
-	+mobile-nav()
 	.project-page
 		+header-nav('header-nav-wrap--project','header-nav header-nav-inner')
 		section.section-project
@@ -23,3 +21,5 @@ block content
 					])
 
 		include ../sections/_footer-inner.pug
+	.background#background
+	+mobile-nav()

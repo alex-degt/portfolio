@@ -4,8 +4,6 @@ block variables
 	- const title = "Портфолио | Алексей Дегтярев";
 
 block content
-	.background#background
-	+mobile-nav()
 	.portfolio-page
 		+header-nav('header-nav-wrap--portfolio')
 		section.section-portfolio.section-portfolio--inner#portfolio
@@ -18,3 +16,5 @@ block content
 					])
 			
 		include ../sections/_footer-inner.pug
+	.background#background
+	+mobile-nav()
