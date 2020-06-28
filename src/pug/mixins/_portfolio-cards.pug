@@ -1,0 +1,10 @@
+mixin cardBlock(objData)
+	.portfolio-cards#portfolio-cards
+		each item in objData
+			div(class=" " + item.addClass)
+				div(class="" + item.cardClass)
+					img(src="img/portfolio-prev/" + item.img + ".jpg" , alt="portfolio-card")
+					a(href=" " + item.link).card__img-overlay
+					a(href=" " + item.link).button-card Смотреть проект
+				a(href=" " + item.link class=" " + item.titleClass) #{item.title}
+				div(class=" " + item.textClass) #{item.text}

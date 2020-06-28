@@ -1,0 +1,25 @@
+extends ./../layouts/main.pug
+
+block variables
+	- const title = "ЮНИТ | Алексей Дегтярев";
+
+block content
+	.project-page
+		+header-nav('header-nav-wrap--project','header-nav header-nav-inner')
+		section.section-project
+			.container
+				+project-card([
+					{title: 'Проект "ЮНИТ"',
+					linkDemo: 'https://alex-degt.github.io/Unit/',
+					linkGit: 'https://github.com/alex-degt/Unit/',
+					projectDesc: 'Landing page для приложения "ЮНИТ". Страница полностью совместима с современными браузерами, страница полностью адаптивна, используется Mobile First подход.',
+					workDetails: 'Адаптивная верстка, HTML5, CSS3, JavaScript, jQuery.',
+					projectFeatures: 'Мобильная навигация, карусель OwlCarousel.',
+					img: 'unit',
+					buttonPrev: 'project-lambda.html',
+					buttonNext: 'project-metallex.html'}
+					])
+
+		include ../sections/_footer-inner.pug
+	.background#background
+	+mobile-nav()

@@ -1,0 +1,309 @@
+*
+	box-sizing: border-box
+
+html
+	scroll-behavior: smooth
+
+$header-desc: #393f47
+$text-color: #000000
+$yellow: #fbdc4d
+$dots: #89b4cb
+$button-border: #464646
+$dots-active: #ea736d
+
+html, body
+	margin: 0
+	padding: 0
+	width: 100%
+	height: 100%
+	position: relative
+	font-family: 'M PLUS 1p', sans-serif
+	font-size: 18px
+	line-height: 1
+
+body
+	animation-name: slowShow
+	animation-duration: .3s
+
+	animation-fill-mode: forwards
+
+@keyframes slowShow
+	0%
+		opacity: 0
+	25%
+		opacity: 0.25
+	50%
+		opacity: 0.5
+	75%
+		opacity: 0.75
+	100%
+		opacity: 1
+
+::selection
+	background-color: $yellow
+
+a, a:hover
+	text-decoration: none
+
+ul
+	margin: 0
+	padding: 0
+	list-style-type: none
+
+h1, h2, h3, h4, p
+	margin: 0
+	padding: 0
+	font-size: 1em
+
+img
+	max-width: 100%
+	height: auto
+	display: block
+
+button, input, textarea
+	outline: none
+
+button
+	cursor: pointer
+
+#page-nav
+	display: none
+	@media (min-width: 1200px)
+		position: fixed
+		z-index: 100
+		top: 50%
+		right: 30px
+		display: block
+		transform: translateY(-50%)
+		li
+			margin-bottom: 26px
+			width: 14px
+			height: 14px
+			transition: .5s
+			border-radius: 50%
+			background-color: #89b4cb
+			&:last-child
+				margin-bottom: 0
+			a
+				height: 100%
+				display: block
+	@media (min-width: 1400px)
+		right: 80px
+
+
+#page-nav li.active
+	background-color: #ea736d
+
+.container
+	margin-right: auto
+	margin-left: auto
+	padding: 0 15px
+	@media (min-width: 768px)
+		padding: 0 30px
+		max-width: 768px
+	@media (min-width: 1200px)
+		padding: 0 15px
+		max-width: 1170px
+
+.button
+	padding: 14px 39px
+	height: 54px
+	display: inline-block
+	cursor: pointer
+	transition: .5s
+	color: $text-color
+	border: none
+	border-radius: 31px
+	background-color: $yellow
+	font-size: 22px
+	font-weight: 700
+	-webkit-appearance: none
+	&:hover
+		background-color: #ffd200
+	&:active
+		background-color: #e1bc10
+	@media (min-width: 1200px)
+		padding: 21px 39px
+		height: 64px
+
+.button-border
+	padding: 17px 36px
+	display: inline-block
+	transition: .5s
+	color: $button-border
+	border: 4px solid $button-border
+	border-radius: 31px
+	font-size: 22px
+	font-weight: 700
+	&:hover
+		color: #797979
+		border: 4px solid #797979
+	&:active
+		color: #181818
+		border: 4px solid #181818
+
+.button-card
+	padding: 15px 30px
+	position: absolute
+	bottom: 28px
+	left: 50%
+	display: inline-block
+	transition: .5s
+	transform: translate(-50%, 50%)
+	white-space: nowrap
+	opacity: 0
+	color: #ea736d
+	border-radius: 26px
+	background-color: #fff
+	font-size: 22px
+	font-weight: 800
+	&:hover
+		color: #fff
+		background-color: #ea736d
+	&:active
+		color: #fff
+		background-color: #d4423b
+
+.social-link
+	transition: .2s
+	color: #000
+	font-size: 27px
+
+.social-link__linkedin
+	&:hover, &:active
+		color: #0077b5
+
+.social-link__github
+	&:hover, &:active
+		color: #6cc644
+
+.social-link__vk
+	&:hover, &:active
+		color: #45668e
+
+.title
+	position: relative
+	z-index: 1
+	display: inline-block
+	color: #000000
+	font-size: 42px
+	font-weight: 800
+	&:after
+		height: 12px
+		position: absolute
+		z-index: -1
+		right: -5px
+		bottom: 0
+		left: -5px
+		content: ""
+		background-color: $yellow
+	@media (min-width: 768px)
+		font-size: 52px
+	@media (min-width: 1200px)
+		font-size: 64px
+		&:after
+			bottom: 3px
+
+.title--small
+	position: relative
+	z-index: 1
+	display: inline-block
+	color: #000
+	font-size: 22px
+	font-weight: 800
+	&:after
+		height: 8px
+		position: absolute
+		z-index: -1
+		right: 0
+		bottom: -2px
+		left: 0
+		content: ""
+		background-color: $yellow
+	@media (min-width: 1200px)
+		font-size: 26px
+		&:after
+			bottom: 0
+
+.title--center
+	margin: 0 auto
+
+.link
+	transition: .5s
+	color: #039be5
+	border-bottom: 1px solid rgba(3, 155, 229, 0)
+	font-size: 20px
+	font-weight: 500
+	&:hover
+		color: lighten(#039be5, 10%)
+		border-bottom: 1px solid rgba(31, 180, 252, 1)
+	&:active
+		color: #ea655f
+		border-bottom: 1px solid #ea655f
+
+.link-tel
+	transition: .5s
+	color: #96969d
+	font-size: 20px
+	font-weight: 500
+	&:hover
+		color: lighten(#96969d, 15%)
+	&:active
+		color: #ea655f
+
+.none
+	display: none
+
+.mix
+	display: none
+
+.line-bottom--large
+	position: relative
+	z-index: 2
+	display: inline-block
+	color: #000
+	&:after
+		height: 12px
+		position: absolute
+		z-index: -1
+		right: -5px
+		bottom: 4px
+		left: -5px
+		content: ""
+		background-color: $yellow
+	@media (min-width: 768px)
+		&:after
+			bottom: 6px
+	@media (min-width: 1200px)
+		&:after
+			right: -5px
+			bottom: 11px
+			left: -5px
+
+.line-bottom--medium
+	position: relative
+	z-index: 2
+	color: #000
+	&:after
+		height: 12px
+		position: absolute
+		z-index: -1
+		right: -5px
+		bottom: 9px
+		left: -5px
+		content: ""
+		background-color: $yellow
+	@media (min-width: 768px)
+		&:after
+			bottom: 6px
+	@media (min-width: 1200px)
+		&:after
+			bottom: 9px
+
+.error
+	animation-name: slowShow
+	animation-duration: .3s
+	color: red
+	font-size: 18px
+
+	animation-fill-mode: forwards

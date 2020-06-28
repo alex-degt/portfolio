@@ -1,0 +1,25 @@
+extends ./../layouts/main.pug
+
+block variables
+	- const title = "Metallex | Алексей Дегтярев";
+
+block content
+	.project-page
+		+header-nav('header-nav-wrap--project','header-nav header-nav-inner')
+		section.section-project
+			.container
+				+project-card([
+					{title: 'Проект "Metallex"',
+					linkDemo: 'https://alex-degt.github.io/metallex/',
+					linkGit: 'https://github.com/alex-degt/metallex/',
+					projectDesc: 'Шаблон одностраничного сайта для компании производителя торгового оборудования из металла. Содержит в себе модальные окна, навигационное меню, параллакс эфекты, анимацию при скроллинге, слайдер. Совместим с современными браузерами, страница полностью адаптивна.',
+					workDetails: 'Адаптивная верстка, HTML5, CSS3, JavaScript, jQuery.',
+					projectFeatures: 'Анимация AOS, лайтбокс baguetteBox, слайдер slickSlider, Parallax, Mobile First.',
+					img: 'metallex',
+					buttonPrev: 'project-unit.html',
+					buttonNext: 'project-cinema.html'}
+					])
+
+		include ../sections/_footer-inner.pug
+	.background#background
+	+mobile-nav()

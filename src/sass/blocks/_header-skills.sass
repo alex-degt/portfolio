@@ -1,0 +1,143 @@
+.header-skills
+	margin-top: 81px
+	margin-bottom: 103px
+	@media (min-width: 768px)
+		margin-top: 15px
+		margin-bottom: 45px
+	@media (min-width: 1200px)
+		margin-top: -10px
+		margin-bottom: 0
+		padding-top: 0
+
+.skills-wrap
+	margin-right: auto
+	margin-left: auto
+	max-width: 520px
+	display: flex
+	flex-direction: column
+	@media (min-width: 768px)
+		margin: 0
+		max-width: 100%
+		flex-direction: row
+		justify-content: space-between
+
+.skills-about
+	margin-bottom: 42px
+	.button
+		display: none
+	@media (min-width: 768px)
+		margin-bottom: 0
+		width: 50%
+		max-width: 338px
+	@media (min-width: 1200px)
+		margin-bottom: 0
+		width: 54%
+		max-width: 655px
+		.button
+			display: inline-block
+
+.skills-contant
+	width: 100%
+	.skills-title
+		margin-bottom: 26px
+	@media (min-width: 768px)
+		width: 50%
+		max-width: 285px
+	@media (min-width: 1200px)
+		width: 33%
+		max-width: 360px
+		.skills-title
+			margin-bottom: 40px
+
+.skills-title
+	margin-bottom: 34px
+	font-size: 30px
+	@media (min-width: 768px)
+		font-size: 32px
+	@media (min-width: 1200px)
+		margin-bottom: 40px
+		color: $text-color
+		font-size: 40px
+		font-weight: 800
+
+.skills-list
+	@media (min-width: 1200px)
+		margin-bottom: 45px
+		
+
+.skills-list__item
+	margin-bottom: 19px
+	color: $text-color
+	font-size: 18px
+	font-weight: 400
+	line-height: 1.1
+	&:last-child
+		margin-bottom: 0
+	@media (min-width: 1200px)
+		margin-bottom: 15px
+		font-size: 24px
+		line-height: 1
+		&:before
+			content: "—"
+
+.soc-block
+	display: flex
+	align-items: center
+
+.soc-item
+	margin-right: 30px
+	width: 50px
+	height: 50px
+	display: flex
+	align-items: center
+	justify-content: center
+	transition: .5s
+	border-radius: 50%
+	font-size: 31px
+	&:last-child
+		margin-right: 0
+	&:hover
+		border-radius: 0
+	&:active
+		transform: translateY(-20%)
+
+.soc-item--vb
+	color: #fff
+	background-color: #8f5db7
+	font-size: 31px
+	@media (min-width: 768px)
+		display: none
+
+.soc-item--wa
+	color: #fff
+	background-color: #43d854
+
+.soc-item--gh
+	color: #fff
+	background-color: #000
+
+.soc-item-tg
+	color: #fff
+	background-color: #039be5
+
+.soc-block--skills
+	margin-bottom: 19px
+	@media (min-width: 768px)
+		margin-bottom: 28px
+	@media (min-width: 1200px)
+		margin-bottom: 35px
+
+.skills-mail
+	transition: .5s
+	color: $text-color
+	border-bottom: 1px solid #000
+	font-size: 18px
+	font-weight: 400
+	&:hover
+		color: #039be5
+		border-bottom: 1px solid #039be5
+	&:active
+		color: #ea655f
+		border-bottom: 1px solid #ea655f
+	@media (min-width: 1200px)
+		font-size: 24px
