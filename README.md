@@ -14,3 +14,10 @@
 * Форма обратной связи (Ajax, PHP)
 
 [Онлайн демо](https://alex-degt.github.io/portfolio/)
+
+### Протестировать локально:
+```
+git clone https://github.com/alex-degt/portfolio.git
+npm i
+gulp
+```
