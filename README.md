@@ -15,7 +15,7 @@
 
 [Онлайн демо](https://alex-degt.github.io/portfolio/)
 
-### Протестировать локально:
+### Тестировать локально:
 ```
 git clone https://github.com/alex-degt/portfolio.git
 npm i
