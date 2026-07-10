@@ -1,0 +1,27 @@
+---
+interface Props {
+	revealDelayMs?: number;
+}
+
+const { revealDelayMs } = Astro.props;
+const revealStyle = revealDelayMs === undefined ? undefined : `--project-card-reveal-delay: ${revealDelayMs}ms;`;
+---
+
+<div
+	class:list={["m-1.5 h-full shadow-2xl lg:m-2", revealDelayMs !== undefined && "project-card-reveal"]}
+	style={revealStyle}>
+	<div class="project-card-skeleton">
+		<div class="project-card-skeleton__media"></div>
+		<div class="project-card-skeleton__body">
+			<div class="project-card-skeleton__line project-card-skeleton__line--short"></div>
+			<div class="project-card-skeleton__line"></div>
+			<div class="project-card-skeleton__chips">
+				<span></span>
+				<span></span>
+				<span></span>
+				<span></span>
+			</div>
+		</div>
+		<div class="project-card-skeleton__footer"></div>
+	</div>
+</div>

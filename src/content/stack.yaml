@@ -1,0 +1,92 @@
+laravel:
+  name: Laravel
+  icon: /img/icons/logo-laravel.svg
+  link: https://laravel.com/
+yii:
+  name: Yii
+  icon: /img/icons/logo-yii.svg
+  link: https://www.yiiframework.com/
+modx:
+  name: MODx
+  icon: /img/icons/logo-modx.svg
+  link: https://modx.com/
+gulp:
+  name: Gulp
+  icon: /img/icons/logo-gulp.svg
+  link: https://gulpjs.com/
+astro:
+  name: Astro
+  icon: /img/icons/logo-astro.svg
+  link: https://astro.build/
+amp:
+  name: AMP
+  icon: /img/icons/logo-amp.svg
+  link: https://developers.google.com/amp
+pug:
+  name: PUG
+  icon: /img/icons/logo-pug.svg
+  link: https://pugjs.org/
+html:
+  name: HTML
+  icon: /img/icons/logo-html.svg
+  link: https://developer.mozilla.org/en-US/docs/Web/HTML
+tailwind:
+  name: Tailwind CSS
+  icon: /img/icons/logo-tailwind.svg
+  link: https://tailwindcss.com/
+sass:
+  name: SASS
+  icon: /img/icons/logo-sass.svg
+  link: https://sass-lang.com/
+css:
+  name: CSS
+  icon: /img/icons/logo-css.svg
+  link: https://developer.mozilla.org/en-US/docs/Web/CSS
+js:
+  name: JavaScript
+  icon: /img/icons/logo-javascript.svg
+  link: https://developer.mozilla.org/en-US/docs/Web/JavaScript
+react:
+  name: React
+  icon: /img/icons/logo-react.svg
+  link: https://react.dev/
+vue:
+  name: Vue
+  icon: /img/icons/logo-vue.svg
+  link: https://vuejs.org/
+nuxt:
+  name: Nuxt
+  icon: /img/icons/logo-nuxt.svg
+  link: https://nuxt.com/
+typescript:
+  name: TypeScript
+  icon: /img/icons/logo-typescript.svg
+  link: https://www.typescriptlang.org/
+vite:
+  name: Vite
+  icon: /img/icons/logo-vite.svg
+  link: https://vite.dev/
+python:
+  name: Python
+  icon: /img/icons/logo-python.svg
+  link: https://www.python.org/
+sqlite:
+  name: SQLite
+  icon: /img/icons/logo-sqlite.svg
+  link: https://www.sqlite.org/
+docker:
+  name: Docker
+  icon: /img/icons/logo-docker.svg
+  link: https://www.docker.com/
+notebooklm:
+  name: NotebookLM
+  icon: /img/icons/logo-notebooklm.svg
+  link: https://notebooklm.google.com/
+claude:
+  name: Claude
+  icon: /img/icons/logo-claude.svg
+  link: https://claude.ai/
+github:
+  name: GitHub
+  icon: /img/icons/logo-github.svg
+  link: https://github.com/

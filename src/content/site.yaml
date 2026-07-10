@@ -1,0 +1,28 @@
+config:
+  siteUrl: https://alex-degt.com
+  siteName: Oleksii Dehtiarov
+  defaultTitle: Oleksii Dehtiarov | Front-end developer
+  defaultDescription: >-
+    Portfolio of Oleksii Dehtiarov — a front-end developer focused on creative,
+    accessible, and high-quality web experiences.
+  ogImagePath: /img/og-image.png
+  author:
+    name: Oleksii Dehtiarov
+    email: alex.degt.w@gmail.com
+    jobTitle: Front-end developer
+    sameAs:
+      - https://github.com/alex-degt
+      - https://t.me/oleksii_dehtiarov
+      - https://www.linkedin.com/in/alex-degt/
+  keywords:
+    - Oleksii Dehtiarov
+    - Alex Degt
+    - front-end developer
+    - frontend developer
+    - web developer
+    - portfolio
+    - HTML
+    - CSS
+    - JavaScript
+    - Astro
+    - Tailwind CSS

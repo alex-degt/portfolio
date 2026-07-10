@@ -1,0 +1,29 @@
+html,
+.body {
+	position: relative;
+	overflow-x: hidden;
+	color: var(--color-neutral-700);
+}
+
+body {
+	min-height: 100dvh;
+	background-color: var(--color-white);
+}
+
+.main {
+	display: flex;
+	flex-direction: column;
+}
+
+.page-wrapper {
+	padding: 48px 0;
+}
+
+.page-container {
+	margin-right: auto;
+	margin-left: auto;
+	padding-right: 16px;
+	padding-left: 16px;
+	max-width: 1024px;
+	width: 100%;
+}

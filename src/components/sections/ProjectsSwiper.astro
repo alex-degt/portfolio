@@ -1,0 +1,85 @@
+---
+import type { Project } from "../../lib/projects";
+import { getInitialProjectSlideLoadCount, PROJECTS_SWIPER_MAX_SLIDES_PER_VIEW } from "../../lib/projectsSwiper";
+import ProjectCard from "../cards/ProjectCard.astro";
+import ProjectCardSkeleton from "../cards/ProjectCardSkeleton.astro";
+
+interface Props {
+	projects: Project[];
+}
+
+const { projects } = Astro.props;
+const initialLoadCount = getInitialProjectSlideLoadCount(projects.length);
+const initialRevealStepMs = 140;
+---
+
+<div class="js-projectsSwiper projects-swiper swiper overflow-visible" data-project-total={projects.length}>
+	{
+		projects.length === 0 && import.meta.env.DEV ? (
+			<p class="text-sm text-red-700" role="status">
+				Projects did not load. If you changed content collections, restart the dev server (`npm run dev`) to re-sync the
+				content layer.
+			</p>
+		) : null
+	}
+	<div class="swiper-wrapper">
+		{
+			projects.map((project, index) => {
+				const isInitiallyLoaded = index < initialLoadCount;
+				const revealDelayMs = isInitiallyLoaded ? index * initialRevealStepMs : undefined;
+
+				return (
+					<div
+						class="swiper-slide"
+						data-project-index={index}
+						data-project-slug={project.slug}
+						data-project-loaded={isInitiallyLoaded ? "true" : "false"}
+						aria-busy={isInitiallyLoaded ? "false" : "true"}>
+						<div class="js-projectSlideHost h-full">
+							{isInitiallyLoaded ? (
+								<ProjectCard
+									project={project}
+									eager={index < PROJECTS_SWIPER_MAX_SLIDES_PER_VIEW}
+									revealDelayMs={revealDelayMs}
+								/>
+							) : (
+								<ProjectCardSkeleton />
+							)}
+						</div>
+					</div>
+				);
+			})
+		}
+	</div>
+
+	{/* Client-side hydration clones this skeleton for retry states — single source of truth for the markup. */}
+	<template class="js-projectCardSkeletonTemplate">
+		<ProjectCardSkeleton />
+	</template>
+</div>
+
+<div class="mt-6 flex items-center justify-start gap-2">
+	<button
+		type="button"
+		aria-label="Previous projects"
+		class="js-projectsSwiperPrev projects-swiper-nav projects-swiper-nav-prev">
+		<svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 20 20" fill="currentColor">
+			<path d="M.75 10 6 4.5V8h13v4H6v3.5L.75 10z"></path>
+		</svg>
+	</button>
+
+	<div class="js-projectsSwiperPagination projects-swiper-pagination">
+		<span class="swiper-pagination-current">1</span>
+		<span aria-hidden="true">/</span>
+		<span class="swiper-pagination-total">{projects.length}</span>
+	</div>
+
+	<button
+		type="button"
+		aria-label="Next projects"
+		class="js-projectsSwiperNext projects-swiper-nav projects-swiper-nav-next">
+		<svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 20 20" fill="currentColor">
+			<path d="M.75 10 6 4.5V8h13v4H6v3.5L.75 10z"></path>
+		</svg>
+	</button>
+</div>

@@ -1,0 +1,21 @@
+---
+import type { ProjectStatus } from "../../lib/projects";
+
+interface Props {
+	status?: ProjectStatus;
+}
+
+const { status } = Astro.props;
+
+if (!status) {
+	return null;
+}
+---
+
+{
+	status === "in progress" ? (
+		<span class="card__badge card__badge--in-progress">In progress</span>
+	) : status === "closed" ? (
+		<span class="card__badge card__badge--closed">project closed</span>
+	) : null
+}

@@ -1,0 +1,28 @@
+---
+import type { SocialLink } from "../../lib/socials";
+
+interface Props {
+	items: SocialLink[];
+}
+
+const { items } = Astro.props;
+---
+
+<div class="mb-10 flex items-center justify-start gap-6">
+	{
+		items.map((item, index) => (
+			<a
+				href={item.href}
+				title={item.label}
+				aria-label={item.label}
+				target={item.href.startsWith("mailto:") ? undefined : "_blank"}
+				rel={item.href.startsWith("mailto:") ? undefined : "me noopener noreferrer"}
+				data-reveal
+				data-delay={`${150 + index * 80}`}
+				class="js-network network-link">
+				<Fragment set:html={item.svg} />
+				<span class="network-link__bg" />
+			</a>
+		))
+	}
+</div>

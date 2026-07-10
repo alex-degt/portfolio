@@ -1,0 +1,27 @@
+---
+import { getCollection } from "astro:content";
+import ProjectCard from "../../components/cards/ProjectCard.astro";
+import { projectsFromEntries, type Project } from "../../lib/projects";
+import RawLayout from "../../layouts/RawLayout.astro";
+
+export async function getStaticPaths() {
+	const projects = projectsFromEntries(await getCollection("projects"));
+
+	return projects.map((project) => ({
+		params: { slug: project.slug },
+		props: { project },
+	}));
+}
+
+interface Props {
+	project: Project;
+}
+
+const { project } = Astro.props;
+---
+
+<RawLayout title={`${project.name ?? project.slug} — project card`}>
+	<div class="js-projectCardFragment" data-project-slug={project.slug}>
+		<ProjectCard project={project} />
+	</div>
+</RawLayout>

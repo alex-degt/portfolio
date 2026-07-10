@@ -1,0 +1,24 @@
+---
+import { getStackItems } from "../../lib/stack";
+
+interface Props {
+	stack: string[];
+}
+
+const { stack } = Astro.props;
+const stackItems = await getStackItems();
+const items = stack.map((key) => stackItems[key]).filter(Boolean);
+---
+
+<div class="card__stack">
+	{
+		items.map((item) => (
+			<a href={item.link} target="_blank" rel="nofollow" class="stack-item">
+				<span class="stack-item__icon">
+					<img src={item.icon} width="20" height="20" aria-hidden="true" alt="" />
+				</span>
+				<span class="stack-item__text">{item.name}</span>
+			</a>
+		))
+	}
+</div>

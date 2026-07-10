@@ -1,0 +1,19 @@
+#!/bin/sh
+set -e
+
+echo "pre-push: prettier"
+if ! npm run format:check; then
+	npm run format
+	echo ""
+	echo "pre-push: Prettier reformatted some files. Review and commit them, then push again."
+	exit 1
+fi
+
+echo "pre-push: astro check"
+npm run check
+
+echo "pre-push: unit tests"
+npm test
+
+echo "pre-push: production build"
+npm run build
