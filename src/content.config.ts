@@ -36,8 +36,17 @@ const socials = defineCollection({
 	schema: z.object({
 		id: z.string(),
 		label: z.string(),
-		href: z.string(),
 		svg: z.string(),
+	}),
+});
+
+const contacts = defineCollection({
+	loader: file(`${contentDir}/contacts.yaml`),
+	schema: z.object({
+		email: z.email(),
+		github: z.url(),
+		telegram: z.url(),
+		linkedin: z.url(),
 	}),
 });
 
@@ -51,9 +60,7 @@ const site = defineCollection({
 		ogImagePath: z.string(),
 		author: z.object({
 			name: z.string(),
-			email: z.email(),
 			jobTitle: z.string(),
-			sameAs: z.array(z.url()),
 		}),
 		keywords: z.array(z.string()).min(1),
 	}),
@@ -63,5 +70,6 @@ export const collections = {
 	projects,
 	stack,
 	socials,
+	contacts,
 	site,
 };
