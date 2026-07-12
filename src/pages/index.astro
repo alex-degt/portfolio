@@ -1,0 +1,26 @@
+---
+import { getCollection } from "astro:content";
+import HeroName from "../components/sections/HeroName.astro";
+import ProjectsSwiper from "../components/sections/ProjectsSwiper.astro";
+import SocialLinks from "../components/sections/SocialLinks.astro";
+import { getSiteConfig } from "../lib/site";
+import { projectsFromEntries } from "../lib/projects";
+import { getSocials } from "../lib/socials";
+import MainLayout from "../layouts/MainLayout.astro";
+
+const [{ defaultTitle, defaultDescription }, socials, projects] = await Promise.all([
+	getSiteConfig(),
+	getSocials(),
+	getCollection("projects").then(projectsFromEntries),
+]);
+---
+
+<MainLayout title={defaultTitle} description={defaultDescription}>
+	<section class="page-wrapper overflow-hidden">
+		<div class="page-container">
+			<HeroName />
+			<SocialLinks items={socials} />
+			<ProjectsSwiper projects={projects} />
+		</div>
+	</section>
+</MainLayout>

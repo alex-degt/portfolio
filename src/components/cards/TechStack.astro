@@ -1,0 +1,27 @@
+---
+import { getStackItems } from "../../lib/stack";
+import { symbolIdFromIconPath } from "../../lib/stackSprite";
+
+interface Props {
+	stack: string[];
+}
+
+const { stack } = Astro.props;
+const stackItems = await getStackItems();
+const items = stack.map((key) => stackItems[key]).filter(Boolean);
+---
+
+<div class="card__stack">
+	{
+		items.map((item) => (
+			<a href={item.link} target="_blank" rel="nofollow" class="stack-item">
+				<span class="stack-item__icon">
+					<svg width="20" height="20" aria-hidden="true" focusable="false">
+						<use href={`#${symbolIdFromIconPath(item.icon)}`} />
+					</svg>
+				</span>
+				<span class="stack-item__text">{item.name}</span>
+			</a>
+		))
+	}
+</div>

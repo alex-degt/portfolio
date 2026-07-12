@@ -1,0 +1,40 @@
+{
+	"name": "portfolio",
+	"version": "1.0.4",
+	"description": "Portfolio site migrated to Astro",
+	"type": "module",
+	"browserslist": [
+		"last 2 versions"
+	],
+	"scripts": {
+		"dev": "astro dev",
+		"build": "astro build",
+		"preview": "astro preview",
+		"check": "astro check",
+		"test": "vitest run",
+		"format": "prettier --write \"src/**/*.{astro,ts,scss,css,yaml}\"",
+		"format:check": "prettier --check \"src/**/*.{astro,ts,scss,css,yaml}\"",
+		"astro": "astro",
+		"prepare": "husky"
+	},
+	"devDependencies": {
+		"@astrojs/check": "^0.9.9",
+		"@tailwindcss/vite": "^4.3.2",
+		"husky": "^9.1.7",
+		"prettier": "^3.6.2",
+		"prettier-plugin-astro": "^0.14.1",
+		"prettier-plugin-tailwindcss": "^0.6.14",
+		"sass": "^1.90.0",
+		"tailwindcss": "^4.1.11",
+		"vitest": "^4.1.10"
+	},
+	"dependencies": {
+		"@astrojs/sitemap": "^3.7.3",
+		"@fancyapps/ui": "^6.1.14",
+		"astro": "^7.0.6",
+		"swiper": "^14.0.2"
+	},
+	"overrides": {
+		"picomatch@2": "2.3.2"
+	}
+}

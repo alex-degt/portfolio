@@ -1,0 +1,164 @@
+---
+import type { Project } from "../../lib/projects";
+import { thumbPathForImagesPath } from "../../lib/projectAssets";
+import TechStack from "./TechStack.astro";
+
+interface Props {
+	project: Project;
+	eager?: boolean;
+	revealDelayMs?: number;
+}
+
+const { project, eager = false, revealDelayMs } = Astro.props;
+const galleryImageNumbers = project.galleryImageNumbers;
+const hasGallery = galleryImageNumbers.length > 0;
+const thumbPath = project.imagesPath ? thumbPathForImagesPath(project.imagesPath) : undefined;
+const logoPath = project.resolvedLogo;
+const hasLogo = Boolean(logoPath);
+const projectHref = project.url || undefined;
+const projectLinkText = project.urlText ?? (projectHref ? "Production site" : "Unavailable");
+const isLinkDisabled = !projectHref && (project.isNda || project.status === "closed");
+const revealStyle = revealDelayMs === undefined ? undefined : `--project-card-reveal-delay: ${revealDelayMs}ms;`;
+---
+
+<div
+	class:list={["m-1.5 h-full shadow-2xl lg:m-2", revealDelayMs !== undefined && "project-card-reveal"]}
+	style={revealStyle}>
+	<div class="card-container">
+		<div class:list={["card", project.cardClasses]}>
+			<div class="flex flex-col">
+				<div class="card__images">
+					{project.status === "closed" ? <span class="card__badge card__badge--status">project closed</span> : null}
+
+					{
+						hasGallery && thumbPath && project.imagesPath ? (
+							<>
+								<span class="card__badge card__badge--gallery" aria-label={`${galleryImageNumbers.length} images`}>
+									<svg
+										xmlns="http://www.w3.org/2000/svg"
+										width="16"
+										height="16"
+										fill="none"
+										stroke="currentColor"
+										stroke-linecap="round"
+										stroke-linejoin="round"
+										stroke-width="2"
+										viewBox="0 0 24 24"
+										aria-hidden="true"
+										focusable="false">
+										<path d="m22 11-1.296-1.296a2.4 2.4 0 0 0-3.408 0L11 16" />
+										<path d="M4 8a2 2 0 0 0-2 2v10a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2" />
+										<circle cx="13" cy="7" r="1" fill="currentColor" />
+										<rect width="14" height="14" x="8" y="2" rx="2" />
+									</svg>
+									{galleryImageNumbers.length}
+								</span>
+								<a
+									href={`${project.imagesPath}${galleryImageNumbers[0]}.webp`}
+									rel="nofollow"
+									data-fancybox={project.galleryName}
+									class="card__thumb aspect-[151/82]">
+									<img
+										src={thumbPath}
+										width="320"
+										height="240"
+										loading={eager ? "eager" : "lazy"}
+										fetchpriority={eager ? "high" : "auto"}
+										decoding="async"
+										alt={`${project.name} - screenshot ${galleryImageNumbers[0]}`}
+									/>
+								</a>
+								{galleryImageNumbers.length > 1 ? (
+									<div class="card__gallery-links" hidden>
+										{galleryImageNumbers.slice(1).map((num: number) => (
+											<a href={`${project.imagesPath}${num}.webp`} rel="nofollow" data-fancybox={project.galleryName}>
+												{`${project.name} - screenshot ${num}`}
+											</a>
+										))}
+									</div>
+								) : null}
+							</>
+						) : hasLogo ? (
+							<div class="card__logo aspect-[151/82]">
+								{project.isNda ? (
+									<span class="card__nda-stamp" aria-hidden="true">
+										NDA
+									</span>
+								) : null}
+								<img
+									src={logoPath}
+									loading={eager ? "eager" : "lazy"}
+									fetchpriority={eager ? "high" : "auto"}
+									decoding="async"
+									width="340"
+									height="424"
+									alt={project.name ? `${project.name} logo` : "NDA project logo"}
+								/>
+							</div>
+						) : null
+					}
+				</div>
+
+				<div class="card__body">
+					{
+						!project.isNda && project.name ? (
+							<div class="card__info-row">
+								<p class="card__key mb-0.5">Project name:</p>
+								<span class="card__value">{project.name}</span>
+							</div>
+						) : null
+					}
+
+					{
+						project.stack?.length ? (
+							<div class="card__info-row">
+								<p class="card__key mb-2">Technologies:</p>
+								<TechStack stack={project.stack} />
+							</div>
+						) : null
+					}
+				</div>
+			</div>
+
+			<div class="card__footer">
+				{
+					projectHref ? (
+						<a href={projectHref} target="_blank" rel="noopener noreferrer" class="public-link">
+							<svg
+								xmlns="http://www.w3.org/2000/svg"
+								width="24"
+								height="24"
+								fill="none"
+								stroke="currentColor"
+								stroke-linecap="round"
+								stroke-linejoin="round"
+								stroke-width="2"
+								viewBox="0 0 24 24">
+								<circle cx="12" cy="12" r="10" />
+								<path d="M12 2a14.5 14.5 0 0 0 0 20 14.5 14.5 0 0 0 0-20M2 12h20" />
+							</svg>
+							<span class="public-link__text">{projectLinkText}</span>
+						</a>
+					) : (
+						<span class:list={["public-link", isLinkDisabled && "disabled"]}>
+							<svg
+								xmlns="http://www.w3.org/2000/svg"
+								width="24"
+								height="24"
+								fill="none"
+								stroke="currentColor"
+								stroke-linecap="round"
+								stroke-linejoin="round"
+								stroke-width="2"
+								viewBox="0 0 24 24">
+								<circle cx="12" cy="12" r="10" />
+								<path d="M12 2a14.5 14.5 0 0 0 0 20 14.5 14.5 0 0 0 0-20M2 12h20" />
+							</svg>
+							<span class="public-link__text">{projectLinkText}</span>
+						</span>
+					)
+				}
+			</div>
+		</div>
+	</div>
+</div>

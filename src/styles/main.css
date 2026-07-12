@@ -1,0 +1,12 @@
+@import "tailwindcss";
+
+@theme {
+	--font-u: "Unbounded", "Inter", "Segoe UI", sans-serif;
+}
+
+@import "./partials/_fonts.scss";
+@import "./partials/_base.scss";
+@import "./partials/_layout.scss";
+@import "./partials/_project-card.scss";
+@import "./partials/_social-links.scss";
+@import "./partials/_projects-swiper.scss";

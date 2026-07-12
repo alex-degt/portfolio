@@ -1,0 +1,28 @@
+config:
+  siteUrl: https://olede.dev
+  siteName: Oleksii Dehtiarov
+  defaultTitle: Oleksii Dehtiarov | Front-end developer
+  defaultDescription: >-
+    Portfolio of Oleksii Dehtiarov — a front-end developer focused on creative,
+    accessible, and high-quality web experiences.
+  ogImagePath: /img/og-image.png
+  author:
+    name: Oleksii Dehtiarov
+    email: olede.dev9@gmail.com
+    jobTitle: Front-end developer
+    sameAs:
+      - https://github.com/olede-dev
+      - https://t.me/oleksii_dehtiarov
+      - https://www.linkedin.com/in/olede/
+  keywords:
+    - Oleksii Dehtiarov
+    - Alex Degt
+    - front-end developer
+    - frontend developer
+    - web developer
+    - portfolio
+    - HTML
+    - CSS
+    - JavaScript
+    - Astro
+    - Tailwind CSS

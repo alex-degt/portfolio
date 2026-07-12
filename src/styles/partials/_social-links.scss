@@ -1,0 +1,70 @@
+.network-link {
+	position: relative;
+	display: flex;
+	align-items: center;
+	flex-shrink: 0;
+	justify-content: center;
+	width: 32px;
+	height: 32px;
+	color: var(--color-neutral-700);
+
+	svg {
+		position: relative;
+		z-index: 2;
+		transition: color 0.3s ease;
+	}
+
+	&:hover {
+		color: var(--color-white);
+
+		.network-link__bg {
+			animation: network-link-pop-in 0.4s cubic-bezier(0.34, 1.56, 0.64, 1) forwards;
+		}
+	}
+
+	&.is-animating {
+		.network-link__bg {
+			animation: network-link-pop-out 0.3s ease forwards;
+		}
+	}
+}
+
+.network-link__bg {
+	position: absolute;
+	z-index: 1;
+	inset: 0;
+	border-radius: 50%;
+	background: var(--color-neutral-700);
+	opacity: 0;
+	transform: scale(0.5);
+	will-change: transform;
+}
+
+@keyframes network-link-pop-in {
+	0% {
+		opacity: 0;
+		transform: scale(0.5);
+	}
+
+	60% {
+		opacity: 1;
+		transform: scale(1.75);
+	}
+
+	100% {
+		opacity: 1;
+		transform: scale(1.5);
+	}
+}
+
+@keyframes network-link-pop-out {
+	0% {
+		opacity: 1;
+		transform: scale(1.5);
+	}
+
+	100% {
+		opacity: 0;
+		transform: scale(0.5);
+	}
+}

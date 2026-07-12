@@ -1,0 +1,58 @@
+.fancybox__container {
+	--fancybox-backdrop-bg: var(--color-white);
+	--f-toolbar-color: var(--color-neutral-700);
+	--f-toolbar-font: var(--font-u);
+	--f-toolbar-text-shadow: none;
+	--f-button-bg: var(--color-red-700);
+	--f-button-color: var(--color-white);
+	--f-button-hover-color: var(--color-white);
+	--f-button-hover-bg: var(--color-red-800);
+	--f-button-shadow: 4px 6px 0 var(--color-neutral-900);
+	--f-button-transform: none;
+	--f-arrow-pos: 10px;
+	--f-arrow-border-radius: 0;
+	--f-arrow-width: 80px;
+	--f-arrow-height: 48px;
+	--f-arrow-bg: var(--color-red-700);
+	--f-arrow-color: var(--color-white);
+	--f-arrow-hover-bg: var(--color-red-800);
+	--f-arrow-hover-color: var(--color-white);
+	--f-arrow-shadow: 4px 6px 0 var(--color-neutral-900);
+	--f-arrow-svg-width: 48px;
+	--f-arrow-svg-height: 48px;
+	--f-arrow-svg-stroke-width: 0;
+	--f-close-button-width: 46px;
+	--f-close-button-height: 46px;
+	--f-close-border-radius: 0;
+	--f-close-button-bg: var(--color-red-700);
+	--f-close-button-hover-bg: var(--color-red-800);
+	--f-close-button-active-bg: var(--color-red-800);
+	--f-close-button-color: var(--color-white);
+	--f-close-button-hover-color: var(--color-white);
+}
+
+.fancybox__container .f-button.is-arrow {
+	--f-button-svg-filter: none;
+}
+
+.fancybox__container .f-counter {
+	font-weight: 500;
+}
+
+.fancybox__container .f-counter span:first-child {
+	color: var(--color-red-700);
+}
+
+.fancybox__container .f-button.is-arrow:active:not([aria-disabled]),
+.fancybox__container .f-button.is-close-button:active:not([aria-disabled]) {
+	--f-button-shadow: 0 0 0 var(--color-neutral-900);
+	--f-button-transform: translate(4px, 6px);
+}
+
+.f-button[aria-disabled].is-arrow {
+	opacity: 0.4;
+}
+
+.f-button[aria-disabled] svg {
+	opacity: 1;
+}
